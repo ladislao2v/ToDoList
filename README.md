@@ -31,37 +31,49 @@ To-do-List web application
 
 ## Демонстрация работы:
 Главная страница приложения:
+
 ![Main page](images/main.png "Main page")
 
 Страница добавления задачи:
+
 ![Adding page](images/adding.png "Adding page")
 
 Уведомление о задачах с истекающих сроком (менее 8 часов):
+
 ![Notification](images/notification.png "Notification")
 
 Предупреждение о задачах с высоким приоритетом и с истекающих сроком (менее 24 часов):
+
 ![Warning](images/warning.png "Warning")
 
 Редактирование:
+
 ![Edit](images/editing.png "Edit")
 
 Удаление:
+
 ![Delete](images/deleting.png "Delete")
 
 Сортиврока по статусу:
+
 ![Status sort](images/sortingbystatus.png "Status")
 
 Сортиврока по приоритету:
+
 ![Priority sort](images/sortingbypriority.png "Priority")
 
 Сортиврока по дате завершения:
+
 ![DueDate sort](images/sortingbyduedate.png "DueDate")
 
 Задачи, которые закончатся в течении часа:
+
 ![Less One Hour](images/lessonehour.png "LessOneHour")
 
 Задачи, которые закончились:
+
 ![Expired](images/expired.png "Expired")
 
 Перевод задач в архив фоновым сервисом:
+
 ![Expired](images/backgroundapp.png "Background service")
