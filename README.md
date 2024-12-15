@@ -1,10 +1,10 @@
 # ToDoList
 To-do-List web application
 
-Стэк используемых технологий: ASP.NET (backend), Angular (frontend), SQL Server (Database)
+Стек используемых технологий: ASP.NET (backend), Angular (frontend), SQL Server (Database)
 
 ## Гайд по запуску
-1. Выпоолнить T-SQL запрос на вашем SQL Server (создает нужную базу данных и таблицу для хранения задач);
+1. Выполнить T-SQL запрос на вашем SQL Server (создает нужную базу данных и таблицу для хранения задач);
 2. Запустить Program.cs доменной области API для запуска сервера (http://localhost:5171/);
 3. Выполнить команду "ng serve" в папке проекта для запуска клиента (http://localhost:4200);
 4. ДОПОЛНИТЕЛЬНО: Запустить Program.cs доменной области Additional для запуска фонового сервиса;
