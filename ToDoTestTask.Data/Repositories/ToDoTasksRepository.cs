@@ -23,7 +23,7 @@ public sealed class ToDoTasksRepository : IToDoTasksRepository
     public async Task<bool> Create(ToDoTask task, CancellationToken cancellationToken)
     {
         await using SqlCommand command = 
-            await CreateCommandByQuery(CreateTaskQuery);
+            CreateCommandByQuery(CreateTaskQuery);
 
         command.Parameters.AddTaskParameters(task);
 
@@ -33,7 +33,7 @@ public sealed class ToDoTasksRepository : IToDoTasksRepository
     public async Task<bool> Edit(ToDoTask task, CancellationToken cancellationToken)
     {
         await using SqlCommand command = 
-            await CreateCommandByQuery(EditTaskQuery);
+            CreateCommandByQuery(EditTaskQuery);
 
         command.Parameters.AddTaskParametersWithId(task);
 
@@ -43,7 +43,7 @@ public sealed class ToDoTasksRepository : IToDoTasksRepository
     public async Task<List<ToDoTask>> GetAll(string? sortType, CancellationToken cancellationToken)
     {
         await using SqlCommand command = 
-            await CreateCommandByQuery(SelectAllFromTasksQuery);
+            CreateCommandByQuery(SelectAllFromTasksQuery);
         
         await command.Connection.OpenAsync(cancellationToken);
 
@@ -66,7 +66,7 @@ public sealed class ToDoTasksRepository : IToDoTasksRepository
     public async Task<ToDoTask?> Get(int id, CancellationToken cancellationToken)
     {
         await using SqlCommand command =
-            await CreateCommandByQuery(FindTaskByIdQuery);
+            CreateCommandByQuery(FindTaskByIdQuery);
         
         await command.Connection.OpenAsync(cancellationToken);
         
@@ -84,14 +84,14 @@ public sealed class ToDoTasksRepository : IToDoTasksRepository
     public async Task<bool> Delete(int id, CancellationToken cancellationToken)
     {
         await using SqlCommand command = 
-            await CreateCommandByQuery(DeleteByIdQuery);
+            CreateCommandByQuery(DeleteByIdQuery);
 
         command.Parameters.AddWithValue("@Id", id);
 
         return await TryExecuteNonQueryCommand(command, cancellationToken);
     }
 
-    private async Task<SqlCommand> CreateCommandByQuery(string query)
+    private SqlCommand CreateCommandByQuery(string query)
     {
         SqlConnection connection = 
             new SqlConnection(_connectionString);

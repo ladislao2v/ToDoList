@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Component} from '@angular/core';
 import {NotificationService} from "../../service/notification.service";
 import {Router} from "@angular/router";
 import {ToDoTaskService} from "../../service/to-do-task.service";
