@@ -98,7 +98,7 @@ public sealed class ToDoTasksService : IToDoTasksService
         TimeToDue timeToDue = _timeService
             .GetTimeToDueDate(dueTime);
 
-        if (timeToDue.Days < 0 && timeToDue.Hours < 0)
+        if (timeToDue.Days <= 0 && timeToDue.Hours < 0)
             return false;
 
         return true;

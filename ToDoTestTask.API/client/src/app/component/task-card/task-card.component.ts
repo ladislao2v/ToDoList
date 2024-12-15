@@ -85,9 +85,9 @@ export class TaskCardComponent implements OnInit{
   }
 
   getRemainingTime() {
-    if(this.task.days <= 0 && this.task.hours <= 0)
+    if(this.task.days <= 0 && this.task.hours == 0)
       return "<1 h."
-    else if(this.task.days <= 0 && this.task.hours <0)
+    else if(this.task.days <= 0 && this.task.hours < 0)
       return "Expired"
     else
       return this.task.days + ' d. ' + this.task.hours + ' h.'
