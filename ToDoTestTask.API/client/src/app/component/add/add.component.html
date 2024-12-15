@@ -1,0 +1,54 @@
+<div class = 'add-page'>
+  <div class="task-card">
+    <div>
+      <h2>
+        Create task
+      </h2>
+    </div>
+
+    <div class="description">
+      <label>Title: </label>
+        <input type="text" [(ngModel)]="title" />
+    </div>
+
+    <div class="description">
+      <label>Description: </label>
+      <textarea [(ngModel)]="description"></textarea>
+    </div>
+
+    <div class="due-date">
+      <label>Due: </label>
+      <input
+        type="datetime-local"
+        [(ngModel)]="dueDate"
+      />
+    </div>
+
+    <div class="priority">
+      <label>Priority:</label>
+      <select
+        [(ngModel)]="priority"
+        (change)="onPriorityChanged(this.priority)"
+      >
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+
+    <div class="button-place">
+      <button [disabled]="!tryValidate(title, description, dueDate, priority)" (click)="submit()" class="submit-button">
+        Create
+      </button>
+
+    </div>
+
+    <div class="button-place">
+    <button (click)="this.router.navigate(['tasks'])" class="back-button">
+      Back
+    </button>
+    </div>
+  </div>
+</div>
+
+

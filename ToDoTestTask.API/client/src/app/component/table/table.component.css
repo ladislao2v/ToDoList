@@ -1,0 +1,59 @@
+.table-page {
+  justify-items: center;
+  align-items: center;
+}
+
+.header-container {
+  margin-top: 20px;
+}
+
+.large-heading {
+  font-size: 48px;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+.task-grid app-task-card {
+  display: inline-block;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 7px;
+}
+
+.task-grid app-task-card:last-child {
+  margin-right: 0;
+}
+
+.task-grid app-task-card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.label {
+  margin-right: 15px;
+  text-align: center;
+}
+
+.shadow-label {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.shadow-label:last-child {
+  margin-right: 0;
+}
+
+.shadow-label:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}

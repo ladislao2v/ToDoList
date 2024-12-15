@@ -1,0 +1,71 @@
+﻿<div class="task-card">
+  <div class="header">
+
+    <div style="width: 65%" *ngIf="!isEditMode; else editTitle">
+      <h1>{{ this.task.title }}</h1>
+    </div>
+    <ng-template #editTitle>
+      <input type="text" [(ngModel)]="editableTitle" />
+    </ng-template>
+
+    <div style="width: 0%" >
+      <button (click)="delete()" *ngIf="!isEditMode">
+        <img
+          [src]="'assets/Trash.png'"
+          alt="Trash Icon"
+        />
+      </button>
+    </div>
+
+    <button (click)="toggleEditMode()">
+      <img
+        [src]="editIcon === 'edit' ? 'assets/Edit.png' : 'assets/Check.png'"
+        alt="Edit Icon"
+      />
+    </button>
+  </div>
+
+  <div class="due-date">
+    <label>Due: </label>
+    <span *ngIf="!isEditMode">{{ this.task.dueDate }}</span>
+    <input
+      *ngIf="isEditMode"
+      type="datetime-local"
+      [(ngModel)]="editableDueDate"
+    />
+  </div>
+
+  <div class="description">
+    <span *ngIf="!isEditMode">{{ this.task.description }}</span>
+    <textarea *ngIf="isEditMode" [(ngModel)]="editableDescription"></textarea>
+  </div>
+
+  <div class="status">
+    <label>Status:</label>
+    <select
+      [(ngModel)]="this.task.status"
+      (change)="onStatusChanged(this.task.status)"
+    >
+      <option value="New">New</option>
+      <option value="InProgress">In Progress</option>
+      <option value="Completed">Completed</option>
+      <option value="Completed">Archived</option>
+    </select>
+  </div>
+
+  <div class="priority">
+    <label>Priority:</label>
+    <select
+      [(ngModel)]="this.task.priority"
+      (change)="onPriorityChanged(this.task.priority)"
+    >
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  </div>
+
+  <div class="remaining-time">
+    <label>{{ getRemainingTime() }}</label>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="table-page">
+  <div class="header-container">
+    <h1 class="large-heading">To-Do List</h1>
+  </div>
+
+  <div style="width: 85%; display: flex; align-items: center; justify-content: space-between;">
+    <label class="shadow-label" (click)="add()">
+      Add New Task
+    </label>
+
+    <div style="justify-content: center;">
+      <label class="label">Sorted by:</label>
+
+      <label class="shadow-label" (click)="loadTasksByStatus() ">
+        Status
+      </label>
+
+      <label class="shadow-label" (click)="loadTasksByPriority()">
+        Priority
+      </label>
+
+      <label class="shadow-label" (click)="loadTasksByDueDate()">
+        DueTime
+      </label>
+    </div>
+  </div>
+
+  <div style="width: 85%">
+    <hr>
+  </div>
+  <div class="task-grid">
+    <app-task-card
+      *ngFor="let task of tasks"
+      [task]="task"
+      (saved)="onTaskChanged($event)"
+      (statusChanged)="onTaskChanged($event)"
+      (priorityChanged)="onTaskChanged($event)"
+      (deleted)="onTaskDeleted($event)"
+    >
+    </app-task-card>
+  </div>
+</div>
